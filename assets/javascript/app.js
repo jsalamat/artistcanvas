@@ -16,5 +16,13 @@ ctx.lineCap = 'round';
 // when draw it require a color here start with #BADA55
 // lineJoin and lineCap are rounded at start and end of line
 
+let isDrawing = false;
+let lastX = 0;
+let lastY = 0;
+
+// isDrawing is setting false
+	// when click down setting is true
+	// when click up (let go of button) set to false
+// lastX and lastY need starting x,y and ending x,y
 
 
