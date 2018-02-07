@@ -25,4 +25,10 @@ let lastY = 0;
 	// when click up (let go of button) set to false
 // lastX and lastY need starting x,y and ending x,y
 
+// draw function that take in event 
+function draw(e) {
+	console.log(e)
+};
 
+canvas.addEventListener('mousemove', draw);
+// draw event console log when mousemove on canvas
