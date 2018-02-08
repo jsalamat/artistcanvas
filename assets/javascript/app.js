@@ -12,6 +12,9 @@ canvas.height = window.innerHeight;
 ctx.strokeStyle = '#BADA55';
 ctx.lineJoin = 'round';
 ctx.lineCap = 'round';
+//line width edit
+ctx.lineWidth = 100;
+
 
 // when draw it require a color here start with #BADA55
 // lineJoin and lineCap are rounded at start and end of line
@@ -53,9 +56,7 @@ canvas.addEventListener('mousemove', draw);
 canvas.addEventListener('mousedown', (e) => {
 	isDrawing = true;
 	[lastX, lastY] = [e.offsetX, e.offsetY];
-	});
-}
-
+});
 
 canvas.addEventListener('mouseup', () => isDrawing = false);
 canvas.addEventListener('mouseout', () => isDrawing = false);
