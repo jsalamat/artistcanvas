@@ -39,14 +39,24 @@ function draw(e) {
 	// go to
 	ctx.lineTo(e.offsetX, e.offsetY);
 	ctx.stroke();
-
+// update the lastx and lasty variables
+	[lastX, lastY] = [e.offsetX, e.offsetY];
 };
 
 canvas.addEventListener('mousemove', draw);
 // draw event console log when mousemove on canvas
 
 // toggle isDrawing false or true
-canvas.addEventListener('mousedown', () => isDrawing = true);
+// in mousedown need to update the lastx and lasty by passing an event
+	// instead return we make a block
+// mouse down to start it before it mouse move	
+canvas.addEventListener('mousedown', (e) => {
+	isDrawing = true;
+	[lastX, lastY] = [e.offsetX, e.offsetY];
+	});
+}
+
+
 canvas.addEventListener('mouseup', () => isDrawing = false);
 canvas.addEventListener('mouseout', () => isDrawing = false);
 
