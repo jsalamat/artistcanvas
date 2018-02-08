@@ -25,10 +25,21 @@ let lastY = 0;
 	// when click up (let go of button) set to false
 // lastX and lastY need starting x,y and ending x,y
 
-// draw function that take in event 
+// draw function that take in event
+
 function draw(e) {
 	if(!isDrawing) return; //stop the fn from runnig when not mouse down
 	console.log(e)
+
+// ctx involves drawing for canvas
+// need to start x,y and move to x,y
+	ctx.beginPath();
+	// start from
+	ctx.moveTo(lastX, lastY);
+	// go to
+	ctx.lineTo(e.offsetX, e.offsetY);
+	ctx.stroke();
+
 };
 
 canvas.addEventListener('mousemove', draw);
@@ -38,3 +49,4 @@ canvas.addEventListener('mousemove', draw);
 canvas.addEventListener('mousedown', () => isDrawing = true);
 canvas.addEventListener('mouseup', () => isDrawing = false);
 canvas.addEventListener('mouseout', () => isDrawing = false);
+
